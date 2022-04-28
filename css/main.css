@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins&display=swap');
+
+:root{
+    --main-color: #0081a7;
+    --secondary-color: #fed9b7;
+    --third-color: #00afb9;
+    --bg-color: #fdfcdc;
+    --btn-color: #ef476f;
+    --btn-hover-color: #cc385a;
+    --white: #fff;
+    --black: #000;
+    --gray: #e7e7e7;
+    --dark-gray: #d8d8d8;
+    --light-blue: #e8fdff;
+
+    /* ========== Fonts ========== */
+    --indie-flower: 'Indie Flower', cursive;
+    --poppins: 'Poppins', sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--poppins);
+}
+
+a{
+    font-style: none;
+    text-decoration: none;
+}
+
+body{
+    background: var(--white);
+}
+
+li{
+    list-style-type: none;
+}
+
+.menu{
+    margin: 1rem;
+    background: var(--btn-color);
+    border-radius: 5px;
+}
+.menu_icon{
+    color: var(--white);
+    font-size: 2rem;
+}
+.nav_title{
+    font-family: var(--indie-flower);
+    font-size: 4rem;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+.button{
+    background: var(--btn-color);
+}
+.button:hover{
+    background: var(--btn-hover-color);
+    transition: 0.3s;
+}
+
+.welcome{
+    font-family: var(--indie-flower);
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--btn-color);
+}
+
+.nav_link{
+    color: var(--white);
+}
+
+.nav-item{
+    margin: 0 0.7rem;
+}
+.nav-item:hover{
+    background: var(--btn-hover-color);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+.search_bar{
+    margin-left: 1rem;
+}
+.search_btn{
+    background: var(--white);
+    margin-right: 1rem;
+}
+
+/*========== Usercard and Sign-in ==========*/
+
+.sign_in, .user_card{
+    border-radius: 5px;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 2rem;
+}
+.sign_in{
+    background: var(--third-color);
+}
+.user_card{
+    background: var(--secondary-color);
+}
+.user_welcome{
+    font-family: var(--indie-flower);
+    font-size: 3rem;
+    color: var(--btn-color);
+}
+.username{
+    color: var(--btn-color);
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+.user_fact{
+    color: var(--btn-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.user_icon{
+    color: var(--btn-color);
+    font-size: 1.5rem;
+}
+.logout_btn{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: var(--white);
+    width: 40%;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+.logout_btn:hover{
+    border-color: var(--btn-color);
+    color: var(--btn-color);
+    transition: 0.3s;
+}
+
+.sign_error{
+    color: var(--secondary-color);
+    font-size: 16px;
+}
+.sign_in_btn{
+    margin-right: auto;
+    display: block;
+    background: var(--white);
+    margin-bottom: 1rem;
+}
+.sign_in_btn:hover{
+    background: var(--btn-color);
+    color: var(--white);
+    transition: 0.3s;
+}
+
+.login_btn{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 1rem;
+    border-color: var(--white);
+    border-width: 2px;
+    color: var(--white);
+}
+.login_btn:hover{
+    color: var(--btn-color);
+    border-color: var(--btn-color);
+    transition: 0.3s;
+}
+.login_content{
+    padding: 1rem;
+}
+.login_title{
+    color: var(--btn-hover-color);
+    font-family: var(--poppins);
+    font-weight: 700;
+    text-align: center;
+}
+.login_label{
+    font-family: var(--poppins);
+    color: var(--btn-hover-color);
+    font-weight: 500;
+}
+.login_form_btn{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 50%;
+    background: var(--btn-color);
+}
+.login_form_btn:hover{
+    background: var(--btn-hover-color);
+}
+.error_login{
+    color: var(--btn-hover-color);
+}
+
+/*========== Edit Profile ==========*/
+.edit_btn{
+    background: var(--main-color);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.edit_btn:hover{
+    background: var(--white);
+    color: var(--main-color);
+    transition: 0.3s;
+}
+.edit_content{
+    padding: 1rem;
+    background: var(--light-blue);
+}
+.edit_form_btn{
+    background: var(--main-color);
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.edit_title, .edit_label{
+    color: var(--main-color);
+}
+
+/*========== New Article Btn =========*/
+.new-article_btn{
+    background: var(--third-color);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: fit-content;
+}
+
+/*========== Articles ==========*/
+.main_body{
+    background: var(--gray);
+    padding: 1rem;
+    border-radius: 5px;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 2rem;
+    /*margin-right: 3rem;
+    margin-left: -3rem;*/
+}
+
+.article{
+    cursor: pointer;
+    color: var(--black);
+    margin-bottom: 0;
+}
+
+.article:hover{
+    color: var(--black);
+}
+
+.article_container{
+    background: var(--dark-gray);
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    margin-bottom: -1rem;
+    border-radius: 5px;
+}
+
+.article_body{
+    margin-bottom: 3rem;
+}
+
+.article_title{
+    color: var(--black);
+    font-style: none;
+    font-family: var(--poppins);
+    font-weight: 500;
+}
+
+.category_text{
+    margin-right: 1rem;
+}
+
+/*========== Footer ===========*/
+.footer_container{
+    background: var(--btn-color);
+    margin-bottom: 0;
+    width: 100%;
+}
+.footer_row{
+    margin-right: 0;
+}
+.social_icon{
+    color: var(--white);
+    font-size: 1.5rem;
+}
+.social_icon:hover{
+    color: var(--white);
+}
+
+/*========== New Article ==========*/
+
+
+@media screen and (min-width: 320px) {
+    .nav_title{
+        font-size: 2.5rem;
+    }
+}
+@media screen and (min-width: 768px) {
+    .nav_title{
+        font-size: 3.5rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .main_body{
+        width: 55vw;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .sign_in, .user_card{
+        width: 25vw;
+        height: fit-content;
+        margin-bottom: auto;
+    }
+}
+@media screen and (min-width: 1920px) {
+    .main_body{
+        margin-left: -10rem;
+        margin-right: 2.5rem;
+        width: 50vw;
+    }
+}
