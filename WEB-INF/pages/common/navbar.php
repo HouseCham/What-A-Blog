@@ -26,7 +26,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/master_php/proyecto_php/about.php">
                         <span class="nav_link">About</span>
                     </a>
                 </li>
