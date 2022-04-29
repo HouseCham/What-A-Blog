@@ -26,24 +26,35 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="new_article_title text-center">What about creating a new article?</h1>
+                <h1 class="new_article text-center">What about creating a new post?</h1>
             </div>
         </div>
         <div class="row">
             <form>
                 <div class="mb-3">
-                    <label for="article_title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="article_title"  name="article_title" required>
+                    <label for="article_title" class="form-label article_label">Title</label>
+                    <input type="text" class="form-control new_article_title" id="article_title" name="article_title" required>
                 </div>
                 <div class="mb-3">
-                    <label for="article_description" class="form-label">Description</label>
-                    <textarea name="article_description" id="article_description" cols="30" rows="10"></textarea>
+                    <label for="article_description" class="form-label article_label">Description</label>
+                    </br>
+                    <textarea name="article_description" id="article_description" cols="30" rows="10" class="new_article_description"></textarea>
                 </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <div class="mb-3">
+                    <label for="categories" class="form-label">
+                        Category
+                    </label>
+                    <select id="categories" class="form-select categories">
+                        <!-- Get categories from database -->
+                        <?php $categories = getCategories($connection) ?>
+                        <?php if(!empty($categories)): ?>
+                            <?php while($category = mysqli_fetch_assoc($categories)): ?>
+                                <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn article_btn mb-5">Create article</button>
             </form>
         </div>
     </div>

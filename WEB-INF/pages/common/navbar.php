@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse menu py-1" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">
+                    <a class="nav-link active" aria-current="page" href="/master_php/proyecto_php/index.php">
                         <span class="nav_link">Home</span>
                     </a>
                 </li>
