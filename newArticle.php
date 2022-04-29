@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="row">
-            <form>
+            <form action="php/savePost.php" method="POST">
                 <div class="mb-3">
                     <label for="article_title" class="form-label article_label">Title</label>
                     <input type="text" class="form-control new_article_title" id="article_title" name="article_title" required>
@@ -44,7 +44,7 @@
                     <label for="categories" class="form-label">
                         Category
                     </label>
-                    <select id="categories" class="form-select categories">
+                    <select id="categories" name="category" class="form-select categories">
                         <!-- Get categories from database -->
                         <?php $categories = getCategories($connection) ?>
                         <?php if(!empty($categories)): ?>

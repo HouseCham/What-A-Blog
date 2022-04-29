@@ -47,16 +47,16 @@ if(isset($_POST)){
 
         if($insert){
             $_SESSION['done'] = "You have been registered";
-            echo "ea eaaa registrado";
         } else{
             $_SESSION['errors']['general'] = "Failed to insert te user";
-            echo "fac no se pudo";
         }
+        /* Redirect to index */
+        header('Location: /master_php/proyecto_php/index.php');
+
     } else{
         $check = false;
         $_SESSION['errors'] = $errors;
         header('LOCATION: /master_php/proyecto_php/index.php');
     }
 }
-
 ?>
