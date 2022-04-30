@@ -11,11 +11,11 @@
                 <form action="php/editProfile_controller.php" method="POST">
                     <div class="mb-3">
                         <label for="edit_name" class="form-label edit_label">Set name</label>
-                        <input type="text" class="form-control" id="edit_name" aria-describedby="emailHelp" name="edit_name" required>
+                        <input type="text" class="form-control" id="edit_name" aria-describedby="emailHelp" name="edit_name" required value="<?= $_SESSION['user']['name']; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="edit_lastname" class="form-label edit_label">Set lastname</label>
-                        <input type="text" class="form-control" id="edit_lastname" name="edit_lastname" required>
+                        <input type="text" class="form-control" id="edit_lastname" name="edit_lastname" required value="<?= $_SESSION['user']['lastname']; ?>">
                     </div>
                     <button type="submit" class="btn edit_form_btn text-white">Save</button>
                 </form>
