@@ -1,6 +1,11 @@
 <?php require_once 'php/helpers.php'; ?>
 <?php require_once 'php/connection.php'; ?>
-
+<?php
+    $post = getSinglePost($connection, $_GET['idPost']);
+    if(!isset($post['id'])){
+        header('LOCATION: /master_php/proyecto_php/index.php');
+    }
+?>
 <!doctype html>
 <html lang="en">
 
@@ -18,40 +23,33 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header></header>
     <!-- Navbar -->
     <?php include_once 'WEB-INF/pages/common/navbar.php' ?>
-    <!-- Content -->
-    <div class="container content">
-        <?php if (isset($_SESSION['error_login'])) : ?>
-            <div class="row text-center">
-                <h2 class="error_login">
-                    <?= $_SESSION['error_login'] ?>
-                </h2>
-            </div>
-        <?php endif; ?>
+    <!-- content -->
+    <div class="container">
         <div class="row">
-            <!-- Main -->
-            <div class="main_body col-sm-12 col-lg-9">
-                <!-- Get last 5 articles from database -->
-                <?php $articles = getLastArticles($connection); ?>
-                <?php if (!empty($articles)) : ?>
-                    <?php while ($article = mysqli_fetch_assoc($articles)) : ?>
-                        <?php include 'WEB-INF/pages/common/article.php' ?>
-                    <?php endwhile; ?>
+            <div class="col-sm-12 articleSection_container">
+                <h1 class="article_title text-center"><?= $post['title'] ?></h1>
+                <h4 class="article_date text-center"><?= $post['date'] ?></h4>
+                <p class="article_content">
+                    <?= $post['description'] ?>
+                </p>
+                <span class="article_author">
+                    By: 
+                    <?= $post['name'] ?>
+                    <?= " " ?>
+                    <?=$post['lastname'] ?>
+                </span>
+                </br>
+                <span class="category_article">
+                <?=$post['category'] ?>
+                </span>
+                <?php if(isset($_SESSION['user']) && $_SESSION['user']['id'] == $post['user_id']): ?>
+                    </br>
+                    <a href="/master_php/proyecto_php/php/deletePost.php?postId=<?=$post['id'] ?>" class="btn delete_post text-white">Delete</a>
+                    <a href="/master_php/proyecto_php/editPost.php?postId=<?=$post['id'] ?>" class="btn edit_post text-white">Edit</a>
                 <?php endif; ?>
-                <a href="allPosts.php" class="btn all_posts">See more...</a>
             </div>
-            <!--========== Lateral ==========-->
-            <!-- There is no user -->
-            <?php if (!isset($_SESSION['user'])) : ?>
-                <?php include_once 'WEB-INF/pages/common/sign_in.php' ?>
-            <?php endif; ?>
-            <!-- User logged -->
-            <?php if (isset($_SESSION['user'])) : ?>
-                <?php include_once 'WEB-INF/pages/common/userCard.php' ?>
-            <?php endif; ?>
         </div>
     </div>
     <!-- Footer -->

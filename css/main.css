@@ -12,6 +12,8 @@
     --gray: #e7e7e7;
     --dark-gray: #d8d8d8;
     --light-blue: #e8fdff;
+    --delete-btn: #c91717;
+    --edit-btn: #2b97b8;
 
     /* ========== Fonts ========== */
     --indie-flower: 'Indie Flower', cursive;
@@ -287,6 +289,22 @@ li{
     margin-right: 1rem;
 }
 
+.all_posts{
+    background: var(--third-color);
+    border-radius: 5px;
+    color: var(--white);
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: fit-content;
+}
+.all_posts:hover{
+    background: var(--white);
+    color: var(--main-color);
+    border-color: var(--main-color);
+    transition: 0.3s;
+}
+
 /*========== Footer ===========*/
 .footer_container{
     background: var(--btn-color);
@@ -305,7 +323,105 @@ li{
 }
 
 /*========== New Article ==========*/
+.new_article_title, 
+.new_article_description{
+    border: none;
+    border-radius: 5px;
+    background: var(--gray);
+}
+.new_article_title{
+    width: 70vw;
+}
+.new_article_description{
+    width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    resize: none;
+}
+.article_label{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.article_btn{
+    border-radius: 5px;
+    background: var(--third-color);
+    color: var(--white);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.categories{
+    width: 30vw;
+    border-color: var(--gray);
+    border-width: 3px;
+}
+.article_btn:hover{
+    background: var(--main-color);
+    color: var(--white);
+}
+.new_article{
+    font-size: 2.5rem;
+}
 
+/*==================== About ====================*/
+
+.about__text{
+    margin-bottom: 1rem;
+}
+
+/* ==================== Article Page ==================== */
+.articleSection_container{
+    background: var(--gray);
+    border-radius: 5px;
+    margin-bottom: 3rem;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.article_title{
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+.article_date{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.article_content{
+    text-align: justify;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.3rem;
+}
+.article_author{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+.category_article{
+    margin-left: 1rem;
+}
+.delete_post{
+    background: var(--delete-btn);
+    border-radius: 5px;
+    margin: 1rem 0 1rem 1rem;
+    border-width: 2px;
+}
+.delete_post:hover{
+    border-color: var(--white);
+    transition: 0.3s;
+}
+.edit_post{
+    background: var(--edit-btn);
+    border-radius: 5px;
+    margin: 1rem 1rem;
+    border-width: 2px;
+}
+.edit_post:hover{
+    border-color: var(--white);
+    transition: 0.3s;
+}
 
 @media screen and (min-width: 320px) {
     .nav_title{
@@ -327,6 +443,16 @@ li{
         width: 25vw;
         height: fit-content;
         margin-bottom: auto;
+    }
+    .categories{
+        width: 15vw;
+    }
+    .new-article_title{
+        width: 40vw;
+    }
+    .new-article_description{
+        width: 85vw;
+        margin-left: 0;
     }
 }
 @media screen and (min-width: 1920px) {

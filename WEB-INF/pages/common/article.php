@@ -1,5 +1,5 @@
 <div class="article_container">
-    <a href="" class="article">
+    <a href="/master_php/proyecto_php/articlePage.php?idPost=<?= $article['id'] ?>" class="article">
         <div class="article_header">
             <h2 class="article_title"><?= $article['title']; ?></h2>
         </div>

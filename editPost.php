@@ -1,6 +1,11 @@
 <?php require_once 'php/helpers.php'; ?>
 <?php require_once 'php/connection.php'; ?>
-
+<?php
+    $post = getSinglePost($connection, $_GET['postId']);
+    if(!isset($post['id'])){
+        header('LOCATION: /master_php/proyecto_php/index.php');
+    }
+?>
 <!doctype html>
 <html lang="en">
 
@@ -26,21 +31,21 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="new_article text-center">What about creating a new post?</h1>
+                <h1 class="new_article text-center">So you want to edit your post</h1>
             </div>
         </div>
         <div class="row">
-            <form action="php/savePost.php" method="POST">
+            <form action="php/editPost.php?postId=<?= $post['id'] ?>" method="POST">
                 <div class="mb-3">
                     <label for="article_title" class="form-label article_label">Title</label>
                     <input type="text" class="form-control new_article_title" id="article_title" name="article_title" required 
-                    value="<?php echo isset($_SESSION['savePost_error']) ? showError($_SESSION['savePost_error'], 'title') : '' ?>">
+                    value="<?= $post['title'] ?>">
                 </div>
                 <div class="mb-3">
                     <label for="article_description" class="form-label article_label">Description</label>
                     </br>
                     <textarea name="article_description" id="article_description" cols="30" rows="10" class="new_article_description" required>
-                        <?php echo isset($_SESSION['savePost_error']) ? showError($_SESSION['savePost_error'], 'description') : '' ?>
+                        <?= $post['description'] ?>
                     </textarea>
                 </div>
                 <div class="mb-3">
@@ -57,7 +62,7 @@
                         <?php endif; ?>
                     </select>
                 </div>
-                <button type="submit" class="btn article_btn mb-5">Create article</button>
+                <button type="submit" class="btn article_btn mb-5">Update</button>
             </form>
         </div>
     </div>

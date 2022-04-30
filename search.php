@@ -1,6 +1,10 @@
 <?php require_once 'php/helpers.php'; ?>
 <?php require_once 'php/connection.php'; ?>
-
+<?php
+    if(!isset($_POST['search'])){
+        header('LOCATION: /master_php/proyecto_php/index.php');
+    }
+?>
 <!doctype html>
 <html lang="en">
 
@@ -34,14 +38,17 @@
         <div class="row">
             <!-- Main -->
             <div class="main_body col-sm-12 col-lg-9">
-                <!-- Get last 5 articles from database -->
-                <?php $articles = getLastArticles($connection); ?>
-                <?php if (!empty($articles)) : ?>
-                    <?php while ($article = mysqli_fetch_assoc($articles)) : ?>
+                <!-- Get search articles from database -->
+                <?php $search = searchPosts($connection, $_POST['search']); ?>
+                <h2 class="category_title text-center">
+                    About your search... 
+                    "<?= $_POST['search']; ?>"
+                </h2>
+                <?php if (!empty($search)) : ?>
+                    <?php while ($article = mysqli_fetch_assoc($search)) : ?>
                         <?php include 'WEB-INF/pages/common/article.php' ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
-                <a href="allPosts.php" class="btn all_posts">See more...</a>
             </div>
             <!--========== Lateral ==========-->
             <!-- There is no user -->

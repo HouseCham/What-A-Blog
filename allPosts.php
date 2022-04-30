@@ -35,13 +35,12 @@
             <!-- Main -->
             <div class="main_body col-sm-12 col-lg-9">
                 <!-- Get last 5 articles from database -->
-                <?php $articles = getLastArticles($connection); ?>
+                <?php $articles = getArticles($connection); ?>
                 <?php if (!empty($articles)) : ?>
                     <?php while ($article = mysqli_fetch_assoc($articles)) : ?>
                         <?php include 'WEB-INF/pages/common/article.php' ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
-                <a href="allPosts.php" class="btn all_posts">See more...</a>
             </div>
             <!--========== Lateral ==========-->
             <!-- There is no user -->
