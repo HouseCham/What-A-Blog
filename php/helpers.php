@@ -94,4 +94,22 @@ function getSinglePost($connection, $id){
     }
     return $result;
 }
+
+function searchPosts($connection, $search){
+    $sql = "";
+
+    if(!empty($search)){
+        $sql = "SELECT posts.*, categories.name AS 'category' 
+        FROM posts INNER JOIN categories ON posts.category_id = categories.id 
+        WHERE posts.title LIKE '%$search%' ORDER BY posts.id DESC;";
+    }
+
+    $articlesFound = mysqli_query($connection, $sql);
+
+    $result = array();
+    if($articlesFound && mysqli_num_rows($articlesFound)>=1){
+        return $articlesFound;
+    }
+    return $result;
+}
 ?>

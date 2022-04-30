@@ -31,8 +31,8 @@
                     </a>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2 search_bar mb-1 mt-1" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" action="/master_php/proyecto_php/search.php" method="POST">
+                <input class="form-control me-2 search_bar mb-1 mt-1" type="search" placeholder="Search" aria-label="Search" name="search">
                 <button class="btn search_btn mb-1 mt-1" type="submit">Search</button>
             </form>
         </div>
