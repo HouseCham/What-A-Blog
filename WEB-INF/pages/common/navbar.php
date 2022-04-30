@@ -30,11 +30,6 @@
                         <span class="nav_link">About</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span class="nav_link">Contact</span>
-                    </a>
-                </li>
             </ul>
             <form class="d-flex">
                 <input class="form-control me-2 search_bar mb-1 mt-1" type="search" placeholder="Search" aria-label="Search">
