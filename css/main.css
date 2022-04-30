@@ -395,6 +395,10 @@ li{
 .article_author{
     font-size: 1.3rem;
     font-weight: 600;
+    margin-left: 1rem;
+}
+.category_article{
+    margin-left: 1rem;
 }
 
 @media screen and (min-width: 320px) {

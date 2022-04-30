@@ -79,4 +79,19 @@ function getArticlesCategories($connection, $category = null){
     }
     return $result;
 }
+
+function getSinglePost($connection, $id){
+    $sql = "SELECT posts.*, categories.name AS 'category', users.name, users.lastname FROM posts 
+            INNER JOIN categories ON posts.category_id = categories.id 
+            INNER JOIN users ON posts.user_id = users.id 
+            WHERE posts.id = $id;";
+
+    $post = mysqli_query($connection, $sql);
+
+    $result = array();
+    if($post && mysqli_num_rows($post)>=1){
+        return mysqli_fetch_assoc($post);
+    }
+    return $result;
+}
 ?>

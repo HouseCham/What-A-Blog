@@ -1,6 +1,11 @@
 <?php require_once 'php/helpers.php'; ?>
 <?php require_once 'php/connection.php'; ?>
-
+<?php
+    $post = getSinglePost($connection, $_GET['idPost']);
+    if(!isset($post['id'])){
+        header('LOCATION: /master_php/proyecto_php/index.php');
+    }
+?>
 <!doctype html>
 <html lang="en">
 
@@ -24,20 +29,21 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 articleSection_container">
-                <h1 class="article_title text-center">Article title</h1>
-                <h4 class="article_date text-center">04/30/2022</h4>
+                <h1 class="article_title text-center"><?= $post['title'] ?></h1>
+                <h4 class="article_date text-center"><?= $post['date'] ?></h4>
                 <p class="article_content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Saepe consequuntur unde similique error vitae quos tempora perferendis voluptate facilis? 
-                    Quisquam ratione assumenda, cupiditate eum perferendis repellendus eligendi in eius officiis?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Saepe consequuntur unde similique error vitae quos tempora perferendis voluptate facilis? 
-                    Quisquam ratione assumenda, cupiditate eum perferendis repellendus eligendi in eius officiis?
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Saepe consequuntur unde similique error vitae quos tempora perferendis voluptate facilis? 
-                    Quisquam ratione assumenda, cupiditate eum perferendis repellendus eligendi in eius officiis?
+                    <?= $post['description'] ?>
                 </p>
-                <span class="article_author">By: Author</span>
+                <span class="article_author">
+                    By: 
+                    <?= $post['name'] ?>
+                    <?= " " ?>
+                    <?=$post['lastname'] ?>
+                </span>
+                </br>
+                <span class="category_article">
+                <?=$post['category'] ?>
+                </span>
             </div>
         </div>
     </div>
