@@ -50,4 +50,33 @@ function getArticles($connection){
     }
     return $result;
 }
+
+function showCategory($connection, $id){
+    $sql = "SELECT * FROM categories WHERE id = ".$id.";";
+    $categories = mysqli_query($connection, $sql);
+
+    $result = array();
+    if($categories && mysqli_num_rows($categories)>=1){
+        return mysqli_fetch_assoc($categories);
+    }
+    return $result;
+}
+
+function getArticlesCategories($connection, $category = null){
+    $sql = "";
+
+    if(!empty($category)){
+        $sql = "SELECT posts.*, categories.name AS 'category' 
+        FROM posts INNER JOIN categories ON posts.category_id = categories.id 
+        WHERE posts.category_id = $category ORDER BY posts.id DESC;";
+    }
+
+    $lastArticles = mysqli_query($connection, $sql);
+
+    $result = array();
+    if($lastArticles && mysqli_num_rows($lastArticles)>=1){
+        return $lastArticles;
+    }
+    return $result;
+}
 ?>

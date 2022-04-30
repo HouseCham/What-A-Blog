@@ -20,7 +20,7 @@
                         <?php $categories = getCategories($connection) ?>
                         <?php if(!empty($categories)): ?>
                             <?php while($category = mysqli_fetch_assoc($categories)): ?>
-                                <li><a class="dropdown-item" href="WEB-INF/pages/blogs/categories.php?id=<?= $category['id'] ?>"><?= $category['name'] ?></a></li>
+                                <li><a class="dropdown-item" href="/master_php/proyecto_php/postCategory.php?categoryId=<?= $category['id'] ?>"><?= $category['name'] ?></a></li>
                             <?php endwhile; ?>
                         <?php endif; ?>
                     </ul>

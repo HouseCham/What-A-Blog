@@ -34,8 +34,15 @@
         <div class="row">
             <!-- Main -->
             <div class="main_body col-sm-12 col-lg-9">
-                <!-- Get last 5 articles from database -->
-                <?php $articles = getLastArticles($connection); ?>
+                <!-- Get category articles from database -->
+                <?php 
+                    $category = showCategory($connection, $_GET['categoryId']);
+                    if(!isset($category['id'])){
+                        header('Location: /master_php/proyecto_php/index.php');
+                    }
+                ?>
+                <h2 class="category_title text-center"> <?= $category['name'] ?> </h2>
+                <?php $articles = getArticlesCategories($connection, $_GET['categoryId']); ?>
                 <?php if (!empty($articles)) : ?>
                     <?php while ($article = mysqli_fetch_assoc($articles)) : ?>
                         <?php include 'WEB-INF/pages/common/article.php' ?>
