@@ -10,7 +10,12 @@ function showError($errors, $field){
 }
 
 function deleteErrors(){
-    $_SESSION['errors'] = null;
+    if(isset($_SESSION['errors'])){
+        $_SESSION['errors'] = null;
+    }
+    if(isset($_SESSION['savePost_error'])){
+        $_SESSION['savePost_error'] = null;
+    }
 }
 
 function getCategories($connection){
@@ -25,7 +30,7 @@ function getCategories($connection){
 }
 
 function getLastArticles($connection){
-    $sql = "SELECT posts.*, categories.name AS 'category' FROM posts INNER JOIN categories ON posts.category_id = categories.id ORDER BY posts.id DESC LIMIT 4;";
+    $sql = "SELECT posts.*, categories.name AS 'category' FROM posts INNER JOIN categories ON posts.category_id = categories.id ORDER BY posts.id DESC LIMIT 5;";
     $lastArticles = mysqli_query($connection, $sql);
 
     $result = array();

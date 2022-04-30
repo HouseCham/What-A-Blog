@@ -33,12 +33,15 @@
             <form action="php/savePost.php" method="POST">
                 <div class="mb-3">
                     <label for="article_title" class="form-label article_label">Title</label>
-                    <input type="text" class="form-control new_article_title" id="article_title" name="article_title" required>
+                    <input type="text" class="form-control new_article_title" id="article_title" name="article_title" required 
+                    value="<?php echo isset($_SESSION['savePost_error']) ? showError($_SESSION['savePost_error'], 'title') : '' ?>">
                 </div>
                 <div class="mb-3">
                     <label for="article_description" class="form-label article_label">Description</label>
                     </br>
-                    <textarea name="article_description" id="article_description" cols="30" rows="10" class="new_article_description"></textarea>
+                    <textarea name="article_description" id="article_description" cols="30" rows="10" class="new_article_description" required>
+                        <?php echo isset($_SESSION['savePost_error']) ? showError($_SESSION['savePost_error'], 'description') : '' ?>
+                    </textarea>
                 </div>
                 <div class="mb-3">
                     <label for="categories" class="form-label">
@@ -58,6 +61,7 @@
             </form>
         </div>
     </div>
+    <?php deleteErrors(); ?>
     <!-- Footer -->
     <?php include_once 'WEB-INF/pages/common/footer.php' ?>
     <!-- Main JS -->

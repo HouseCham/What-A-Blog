@@ -26,10 +26,10 @@ if(isset($_POST)){
     if(count($errors) == 0){
         $sql = "INSERT INTO posts VALUES(null, $userId, $category, '$title', '$description', CURRENT_DATE());";
         $saveArticle = mysqli_query($connection, $sql);
+        header('LOCATION: /master_php/proyecto_php/index.php');
     } else{
         $_SESSION["savePost_error"] = $errors;
+        header('LOCATION: /master_php/proyecto_php/newArticle.php');
     }
 }
-
-header('LOCATION: /master_php/proyecto_php/index.php');
 ?>
