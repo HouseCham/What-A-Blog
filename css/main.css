@@ -368,6 +368,35 @@ li{
     margin-bottom: 1rem;
 }
 
+/* ==================== Article Page ==================== */
+.articleSection_container{
+    background: var(--gray);
+    border-radius: 5px;
+    margin-bottom: 3rem;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.article_title{
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+.article_date{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.article_content{
+    text-align: justify;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.3rem;
+}
+.article_author{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
 @media screen and (min-width: 320px) {
     .nav_title{
         font-size: 2.5rem;
