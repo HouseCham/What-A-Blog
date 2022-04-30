@@ -39,4 +39,15 @@ function getLastArticles($connection){
     }
     return $result;
 }
+
+function getArticles($connection){
+    $sql = "SELECT posts.*, categories.name AS 'category' FROM posts INNER JOIN categories ON posts.category_id = categories.id ORDER BY posts.id DESC;";
+    $lastArticles = mysqli_query($connection, $sql);
+
+    $result = array();
+    if($lastArticles && mysqli_num_rows($lastArticles)>=1){
+        return $lastArticles;
+    }
+    return $result;
+}
 ?>

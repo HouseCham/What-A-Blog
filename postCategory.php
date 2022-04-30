@@ -41,7 +41,6 @@
                         <?php include 'WEB-INF/pages/common/article.php' ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
-                <a href="allPosts.php" class="btn all_posts">See more...</a>
             </div>
             <!--========== Lateral ==========-->
             <!-- There is no user -->

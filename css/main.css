@@ -287,6 +287,22 @@ li{
     margin-right: 1rem;
 }
 
+.all_posts{
+    background: var(--third-color);
+    border-radius: 5px;
+    color: var(--white);
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width: fit-content;
+}
+.all_posts:hover{
+    background: var(--white);
+    color: var(--main-color);
+    border-color: var(--main-color);
+    transition: 0.3s;
+}
+
 /*========== Footer ===========*/
 .footer_container{
     background: var(--btn-color);
