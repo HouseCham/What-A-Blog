@@ -44,6 +44,11 @@
                 <span class="category_article">
                 <?=$post['category'] ?>
                 </span>
+                <?php if(isset($_SESSION['user']) && $_SESSION['user']['id'] == $post['user_id']): ?>
+                    </br>
+                    <a href="/master_php/proyecto_php/php/deletePost.php?postId=<?=$post['id'] ?>" class="btn delete_post text-white">Delete</a>
+                    <a href="/master_php/proyecto_php/editPost.php?postId=<?=$post['id'] ?>" class="btn edit_post text-white">Edit</a>
+                <?php endif; ?>
             </div>
         </div>
     </div>

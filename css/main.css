@@ -12,6 +12,8 @@
     --gray: #e7e7e7;
     --dark-gray: #d8d8d8;
     --light-blue: #e8fdff;
+    --delete-btn: #c91717;
+    --edit-btn: #2b97b8;
 
     /* ========== Fonts ========== */
     --indie-flower: 'Indie Flower', cursive;
@@ -399,6 +401,26 @@ li{
 }
 .category_article{
     margin-left: 1rem;
+}
+.delete_post{
+    background: var(--delete-btn);
+    border-radius: 5px;
+    margin: 1rem 0 1rem 1rem;
+    border-width: 2px;
+}
+.delete_post:hover{
+    border-color: var(--white);
+    transition: 0.3s;
+}
+.edit_post{
+    background: var(--edit-btn);
+    border-radius: 5px;
+    margin: 1rem 1rem;
+    border-width: 2px;
+}
+.edit_post:hover{
+    border-color: var(--white);
+    transition: 0.3s;
 }
 
 @media screen and (min-width: 320px) {
